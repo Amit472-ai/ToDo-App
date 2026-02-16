@@ -12,11 +12,10 @@ import lombok.*;
 public class ToDoModel {
 
     @Id
-    private String id;
+    private String id;   // Auto generated
 
     private String title;
     private boolean completed;
 
-    private String userId;   // reference by id (Mongo style)
+    private String userId;
 }
-

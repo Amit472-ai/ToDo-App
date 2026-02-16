@@ -3,6 +3,7 @@ package com.example.todoapp.controller;
 import com.example.todoapp.DTO.ToDoRequestDTO;
 import com.example.todoapp.DTO.ToDoResponseDTO;
 import com.example.todoapp.service.ToDoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,10 +22,11 @@ public class ToDoController {
     @PostMapping("/{userId}")
     public ToDoResponseDTO create(
             @PathVariable String userId,
-            @RequestBody ToDoRequestDTO dto
+            @Valid @RequestBody ToDoRequestDTO dto
     ) {
         return service.create(dto, userId);
     }
+
 
     @GetMapping("/{userId}")
     public List<ToDoResponseDTO> getAll(@PathVariable String userId) {

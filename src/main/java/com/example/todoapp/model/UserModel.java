@@ -12,9 +12,8 @@ import lombok.*;
 public class UserModel {
 
     @Id
-    private String id;
+    private String id;   // Mongo auto-generate karega
 
     private String email;
     private String password;
 }
-
